@@ -13,12 +13,12 @@ A simple Node.js CLI tool that:
 
 ## Installation
 
-1. Clone the repository or copy the `index.js` file.
+1. Clone the repository or copy the `tokenizer.js` file.
 2. Ensure you have [Node.js](https://nodejs.org/) installed (version 14+ recommended).
 ```bash
 node -v
 ```
-3. Save the script as index.js.
+3. Save the script as tokenizer.js.
 
 ## Usage    
 
