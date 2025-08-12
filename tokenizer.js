@@ -15,6 +15,14 @@ function tokenToId(token) {
   return id;
 }
 
+// Decoding: ID to Token
+function idToToken(id, dictionary) {
+  const matches = Object.entries(dictionary)
+    .filter(([token, tokenId]) => tokenId === id)
+    .map(([token]) => token);
+  return matches.length ? matches.join(", ") : "(no match)";
+}
+
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
@@ -22,11 +30,21 @@ const rl = readline.createInterface({
 
 rl.question("Enter text to tokenize: ", (input) => {
   const tokens = tokenize(input);
-  const ids = tokens.map(token => tokenToId(token));
+  const dictionary = {};
+
+  const ids = tokens.map(token => {
+    const id = tokenToId(token);
+    dictionary[token] = id;
+    return id;
+  });
 
   console.log("\nTokens: ", tokens.join(" | "));
   console.log("Token IDs: ", ids.join(" "));
   console.log("Token Count:", tokens.length);
 
-  rl.close();
+  rl.question("\nEnter a Token ID to decode: ", (idInput) => {
+    const decoded = idToToken(parseInt(idInput, 10), dictionary);
+    console.log(`Decoded Token(s) for ID ${idInput}: ${decoded}`);
+    rl.close();
+  });
 });
