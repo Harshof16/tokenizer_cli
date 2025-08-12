@@ -24,7 +24,7 @@ node -v
 
 Run the script in your terminal:
 ```bash
-node index.js
+node tokenizer.js
 ```
 
 You’ll be prompted to enter text:
@@ -38,3 +38,57 @@ Tokens:     Hello | world | !
 Token IDs:  78 89 11
 Token Count: 3
 ```
+
+## Examples
+
+### Example 1
+**Input:**  
+`Hello world!`
+
+**Output:**  
+![Example 1 Output](assets/screenshots/example1.png)
+
+---
+
+### Example 2
+**Input:**  
+`world Hello!`
+
+**Output:**  
+![Example 2 Output](assets/screenshots/example2.png)
+
+---
+
+### Example 3
+**Input:**  
+`hello world!`
+
+**Output:**  
+![Example 3 Output](assets/screenshots/example3.png)
+
+---
+
+### Example 4
+**Input:**  
+`Hello, world.`
+
+**Output:**  
+![Example 4 Output](assets/screenshots/example4.png)
+
+---
+
+### Example 5
+**Input:**  
+`42 + 8 = 50`
+
+**Output:**  
+![Example 5 Output](assets/screenshots/example5.png)
+
+---
+
+### Example 6
+**Input:**  
+`It's working, right?`
+
+**Output:**  
+![Example 6 Output](assets/screenshots/example6.png)
